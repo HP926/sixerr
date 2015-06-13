@@ -15,17 +15,17 @@
   </thead>
 
   <tbody>
-    <% @services.each do |service| %>
+    <% @services.each do |s| %>
       <tr>
-        <td><%= service.title %></td>
-        <td><%= service.description %></td>
-        <td><%= service.category %></td>
-        <td><%= service.user.email %></td>
-        <td><%= service.price %></td>
-        <% if product.user == current_user %>
-        <td><%= link_to 'Show', service %></td>
-        <td><%= link_to 'Edit', edit_service_path(service) %></td>
-        <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= s.title %></td>
+        <td><%= s.description %></td>
+        <td><%= s.category %></td>
+        <td><%= s.user %></td>
+        <td><%= s.price %></td>
+        <% if s.user == current_user %>
+          <td><%= link_to 'Show', s %></td>
+          <td><%= link_to 'Edit', edit_service_path(s) %></td>
+          <td><%= link_to 'Destroy', s, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -35,3 +35,20 @@
 <br>
 
 <%= link_to 'New Service', new_service_path %>
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p>
+          <a href="#" class="btn btn-primary" role="button">Button</a>
+          <a href="#" class="btn btn-default" role="button">Button</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
