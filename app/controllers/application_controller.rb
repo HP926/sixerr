@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
-  def current_user
-    @current_user ||= User.where(id: session[:user_id]).first
-  end
+  # def current_user
+  #   @current_user ||= User.where(id: session[:user_id]).first
+  # end
   
-  helper_method :current_user
+  # helper_method :current_user
 
 end
