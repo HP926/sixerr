@@ -29,6 +29,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'stripe', '~> 1.22.0'
 gem 'bootstrap-sass', '3.3.4.1'
+gem 'paperclip', '~> 4.2.2'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
