@@ -1,54 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Services</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th>User</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @services.each do |s| %>
-      <tr>
-        <td><%= s.title %></td>
-        <td><%= s.description %></td>
-        <td><%= s.category %></td>
-        <td><%= s.user %></td>
-        <td><%= s.price %></td>
-        <% if s.user == current_user %>
-          <td><%= link_to 'Show', s %></td>
-          <td><%= link_to 'Edit', edit_service_path(s) %></td>
-          <td><%= link_to 'Destroy', s, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<h1 class="page-header">Services</h1>
 
 <%= link_to 'New Service', new_service_path %>
 
 <div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <img src="..." alt="...">
-      <div class="caption">
-        <h3>Thumbnail label</h3>
-        <p>...</p>
-        <p>
-          <a href="#" class="btn btn-primary" role="button">Button</a>
-          <a href="#" class="btn btn-default" role="button">Button</a>
-        </p>
+  <% @services.each do |s| %>
+
+    <div class="col-sm-12 col-md-4">
+      <div class="thumbnail span3">
+        <img src="http://i.imgur.com/G7cRqqk.png" class="img-responsive" alt="Responsive image">
+        <div class="caption">
+          <h3><%= s.title %></h3>
+          <p><%= s.description %></p>
+          <% if s.username == current_user %>
+            <a href="<%= service_path(s.id) %>" class="btn btn-info btn-sm" role="button">Show Service</a>
+            <a href="<%= edit_service_path(s.id) %>" class="btn btn-info btn-sm" role="button">Edit Service</a>
+            <a href="<%= service_path(s.id)%>" data-method="delete" class="btn btn-info btn-sm" role="button">Delete Service</a></p>
+          <% else %>
+            <a href="<%= service_path(s.id) %>" class="btn btn-info btn-sm" role="button">Show Service</a> 
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
 
