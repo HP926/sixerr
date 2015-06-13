@@ -14,7 +14,7 @@ class ServicesController < ApplicationController
 
   # GET /services/new
   def new
-    @service = Service.new
+    @service = current_user.services.build
   end
 
   # GET /services/1/edit
@@ -24,7 +24,7 @@ class ServicesController < ApplicationController
   # POST /services
   # POST /services.json
   def create
-    @service = Service.new(service_params)
+    @service = current_user.services.build(service_params)
 
     respond_to do |format|
       if @service.save

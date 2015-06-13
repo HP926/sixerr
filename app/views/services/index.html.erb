@@ -20,11 +20,13 @@
         <td><%= service.title %></td>
         <td><%= service.description %></td>
         <td><%= service.category %></td>
-        <td><%= service.user %></td>
+        <td><%= service.user.email %></td>
         <td><%= service.price %></td>
+        <% if product.user == current_user %>
         <td><%= link_to 'Show', service %></td>
         <td><%= link_to 'Edit', edit_service_path(service) %></td>
         <td><%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

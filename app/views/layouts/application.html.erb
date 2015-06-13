@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
  <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -15,6 +16,10 @@
         </header>
     </div>
  </div>
+
+<%= link_to 'Signout', destroy_user_session_path%>
+<%= link_to "Sign up", new_user_registration_path %>
+<%= link_to "Sign in", new_user_session_path %>
 
 <%= yield %>
 
