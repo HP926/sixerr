@@ -10,7 +10,9 @@
          <%= image_tag s.image.url(:square), alt: "Responsive image" %>
         <div class="caption">
           <h3><%= s.title %></h3>
+          <div class="scroll">
           <p><%= s.description %></p>
+        </div>
           <% if s.user == current_user %>
             <a href="<%= service_path(s.id) %>" class="btn btn-info btn-sm" role="button">Show Service</a>
             <a href="<%= edit_service_path(s.id) %>" class="btn btn-info btn-sm" role="button">Edit Service</a>
