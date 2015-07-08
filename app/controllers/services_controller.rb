@@ -14,7 +14,7 @@ class ServicesController < ApplicationController
 
   # GET /services/new
   def new
-    @service = Service.new
+    @service = current_user.services.build
   end
 
   # GET /services/1/edit
@@ -24,7 +24,7 @@ class ServicesController < ApplicationController
   # POST /services
   # POST /services.json
   def create
-    @service = Service.new(service_params)
+    @service = current_user.services.build(service_params)
 
     respond_to do |format|
       if @service.save
@@ -69,6 +69,6 @@ class ServicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:title, :description, :category, :user, :price)
+      params.require(:service).permit(:title, :description, :category, :username, :price, :image)
     end
 end
