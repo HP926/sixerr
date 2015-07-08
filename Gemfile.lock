@@ -196,11 +196,8 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
-<<<<<<< HEAD
   pg
-=======
   paperclip (~> 4.2.2)
->>>>>>> 62a8a92a019e37a30149aec66003e0cdedc6195e
   rails (= 4.2.1)
   rails_12factor
   sass-rails (~> 5.0)
