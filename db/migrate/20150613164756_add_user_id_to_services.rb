@@ -1,5 +1,5 @@
 class AddUserIdToServices < ActiveRecord::Migration
   def change
-    add_column :services, :user_id, :interger
+    add_column :services, :user_id, :integer
   end
 end
